@@ -9,3 +9,7 @@ ScoreBoard having games as an ArrayList insead of Array for dynamic allocation. 
 I am also creating a main class to run the application.
 
 I am following TDD approach, writing the tests first. Giving an Input, expecting an output, modifying the code until getting the desired results.
+
+
+ScoreBoard is public class (outer)
+Game is no-keyword class (package-private)

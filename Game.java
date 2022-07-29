@@ -40,9 +40,9 @@ class Game {
         return startingTime;
     }
 
-    // no setter for homeTeam 
+    // no setter for homeTeam
 
-    // no setter for awayTeam 
+    // no setter for awayTeam
 
     void setHomeScore(int homeScore) {
         if (awayScore < 0) {
