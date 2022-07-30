@@ -1,4 +1,6 @@
+package com.example.score_board;
 import java.util.ArrayList;
+// create a package for ScoreBoard and Game
 
 public class ScoreBoard {
     private ArrayList<Game> games;
@@ -12,7 +14,7 @@ public class ScoreBoard {
         this.games = games;
     }
 
-    void startGame(String homeTeam, String awayTeam) {
+    public void startGame(String homeTeam, String awayTeam) {
         Game game = new Game(homeTeam, awayTeam);
         games.add(game);
     }
@@ -21,7 +23,7 @@ public class ScoreBoard {
         return games;
     }
 
-    void updateScores(String homeTeam, String awayTeam, int homeScore, int awayScore) {
+    public void updateScores(String homeTeam, String awayTeam, int homeScore, int awayScore) {
         for (int i = 0; i < games.size(); i++) {
             if (games.get(i).getHomeTeam().equals(homeTeam) && games.get(i).getAwayTeam().equals(awayTeam)) {
                 games.get(i).setHomeScore(homeScore);
@@ -30,7 +32,10 @@ public class ScoreBoard {
         }
     }
 
-    void finishGame(String homeTeam, String awayTeam) {
+    public void finishGame(String homeTeam, String awayTeam) {
+        if (homeTeam == null || awayTeam == null) {
+            throw new IllegalArgumentException("teams can't be null.");
+        }
         for (int i = 0; i < games.size(); i++) {
             if (games.get(i).getHomeTeam().equals(homeTeam) && games.get(i).getAwayTeam().equals(awayTeam)) {
                 games.remove(i);
@@ -59,7 +64,7 @@ public class ScoreBoard {
         }
     }
 
-    String getSummary() {
+    public String getSummary() {
         orderGames();
         String summary = "";
         for (int i = 0; i < games.size(); i++) {

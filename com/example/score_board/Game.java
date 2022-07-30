@@ -1,4 +1,5 @@
-class Game {
+package com.example.score_board;
+public class Game {
 
     private String homeTeam;
     private String awayTeam;
