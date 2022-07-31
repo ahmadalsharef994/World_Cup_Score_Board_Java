@@ -1,5 +1,7 @@
 # World_Cup_Score_Board_Java
 
+## Package
+com.example.score_board
 ## Classes
 
 Two classes: Game and ScoreBoard following (S: single responsibility) in SOLID principle.

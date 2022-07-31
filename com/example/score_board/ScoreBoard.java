@@ -1,6 +1,6 @@
 package com.example.score_board;
-
 import java.util.ArrayList;
+// create a package for ScoreBoard and Game
 
 public class ScoreBoard {
     private ArrayList<Game> games;
@@ -23,6 +23,15 @@ public class ScoreBoard {
         return games;
     }
 
+    public void updateScores(String homeTeam, String awayTeam, int homeScore, int awayScore) {
+        for (int i = 0; i < games.size(); i++) {
+            if (games.get(i).getHomeTeam().equals(homeTeam) && games.get(i).getAwayTeam().equals(awayTeam)) {
+                games.get(i).setHomeScore(homeScore);
+                games.get(i).setAwayScore(awayScore);
+            }
+        }
+    }
+
     public void finishGame(String homeTeam, String awayTeam) {
         if (homeTeam == null || awayTeam == null) {
             throw new IllegalArgumentException("teams can't be null.");
@@ -30,15 +39,6 @@ public class ScoreBoard {
         for (int i = 0; i < games.size(); i++) {
             if (games.get(i).getHomeTeam().equals(homeTeam) && games.get(i).getAwayTeam().equals(awayTeam)) {
                 games.remove(i);
-            }
-        }
-    }
-
-    public void updateScores(String homeTeam, String awayTeam, int homeScore, int awayScore) {
-        for (int i = 0; i < games.size(); i++) {
-            if (games.get(i).getHomeTeam().equals(homeTeam) && games.get(i).getAwayTeam().equals(awayTeam)) {
-                games.get(i).setHomeScore(homeScore);
-                games.get(i).setAwayScore(awayScore);
             }
         }
     }
