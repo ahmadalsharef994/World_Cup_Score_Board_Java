@@ -3,7 +3,7 @@ import static org.junit.Assert.assertEquals;
 
 public class main {
     public static void main(String[] args) {
-        // 1. TDD for class ScoreBoard expecting given input
+        // TDD: class ScoreBoard expecting given output from giving input
         ScoreBoard scoreBoard = new ScoreBoard();
         scoreBoard.startGame("Mexico", "Canada");
         scoreBoard.startGame("Spain", "Brazil");
